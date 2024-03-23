@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <style>
+        body {
+            background-color: honeydew;
+            color: black;
+            text-align: center;
+            position: absolute;
+            right: 650px;
+            top: 150px;
+        }
+
+        h1 {
+            text-shadow: 3px rgb(27, 6, 220);
+        }
+
+        button {
+
+            padding: 10px 20px;
+            border-radius: 50%;
+            background-color: rgb(249, 248, 248);
+            color: black;
+        }
+        button:hover{
+            background-color: #007bff;
+        }
+    </style>
+
+<body>
+    <h2><i>THANK YOU</i></h2>
+    <h4>for choosing</h4>
+    
+    <br>
+
+    <img src="https://cdn.dribbble.com/users/1923171/screenshots/12213742/amazon.gif" width="350px" height="250px">
+    <br>
+    <br>
+    <br>
+    <button onclick="back()">back</button>
+    <button onclick="sub()" id="two">Submit</button>
+    
+</body>
+<script>
+    let back = () => {
+        window.open("./viewmore.html", "_self")
+    }
+    let sub =()=>{
+                    window.open("./amazon.html" ,"_self")
+            }
+</script>
+
+</head>
+
+</html>

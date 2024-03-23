@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            position: relative;
+            width: 100%;
+            height: 100vh; 
+        }
+
+        .image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+
+        .button-container {
+            position: absolute;
+            top: 80%; 
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        button {
+            padding: 10px;
+            border-radius: 50%;
+            background-color: rgb(84, 84, 244);
+            color: black;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img class="image" src="https://monetizepros.com/wp-content/uploads/2015/08/amazon-logo.png" alt="Amazon Logo">
+        <div class="button-container">
+            <button onclick="hello12()"><h1>REGISTER NOW</h1></button>
+        </div>
+    </div>
+
+    <script>
+        let hello12 = () => {
+            window.open("./registration.html", "_self")
+        };
+    </script>
+</body>
+</html>

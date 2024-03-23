@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+
+        .viewmore-container {
+            width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .product-details {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .product-details img {
+            width: 100px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
+        .product-info {
+            width: 100%;
+            text-align: left;
+        }
+
+        .product-info h2 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+
+        .product-info p {
+            margin: 0;
+        }
+
+        .buttons {
+            margin-top: 20px;
+        }
+
+        .buttons button {
+            margin-right: 10px;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <div class="viewmore-container">
+        <div id="product-details" class="product-details"></div>
+        <div class="buttons">
+            <button onclick="main()">Go to Main Page</button>
+            <button onclick="sub()">Submit</button>
+        </div>
+    </div>
+
+    <script>
+        const selectedProduct = JSON.parse(localStorage.getItem("selectedProduct"));
+
+        const productDetailsContainer = document.getElementById("product-details");
+        const image = document.createElement("img");
+        image.src = selectedProduct.image;
+        productDetailsContainer.appendChild(image);
+
+        const productInfo = document.createElement("div");
+        productInfo.classList.add("product-info");
+
+        const title = document.createElement("h2");
+        title.textContent = selectedProduct.title;
+        productInfo.appendChild(title);
+
+        const price = document.createElement("p");
+        price.textContent = "Price: $" + selectedProduct.price;
+        productInfo.appendChild(price);
+
+        const description = document.createElement("p");
+        description.textContent = selectedProduct.description;
+        productInfo.appendChild(description);
+
+        const rating = document.createElement("p");
+        rating.textContent = "Rating: " + selectedProduct.rating.rate + " (" + selectedProduct.rating.count + " reviews)";
+        productInfo.appendChild(rating);
+
+        productDetailsContainer.appendChild(productInfo);
+
+        let main = () => {
+            window.open("./main page.html", "_self")
+        }
+
+        let sub = () => {
+            window.open("./thankyou.html", "_self")
+        }
+    </script>
+</body>
+
+</html>
